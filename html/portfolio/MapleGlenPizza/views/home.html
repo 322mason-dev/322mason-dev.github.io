@@ -1,0 +1,66 @@
+<div class="hero p-4 p-md-5 mb-4">
+    <h1 class="display-6 fw-bold mb-2">Maple Glen’s Favorite Slice 🍕</h1>
+    <p class="lead mb-3">
+        Fresh pizza, friendly service, and quick pickup — right here in Maple Glen.
+    </p>
+
+    <div class="d-flex flex-wrap gap-2">
+        <a class="btn btn-primary btn-lg" href="#!/order">Order Pizza</a>
+        <a class="btn btn-outline-light btn-lg" href="#!/menu">View Menu</a>
+    </div>
+</div>
+
+<section class="mb-4">
+    <h2 class="h4 fw-semibold mb-3">Announcements & Specials</h2>
+
+    <div class="row g-3" ng-if="announcements.length">
+        <div class="col-md-4" ng-repeat="a in announcements">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <span class="badge text-bg-success mb-2">Priority {{a.priority}}</span>
+                    <h3 class="h6 fw-bold mb-1">{{a.title}}</h3>
+                    <p class="text-muted mb-0">{{a.details}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-warning" ng-if="!announcements.length">
+        No announcements are available right now.
+    </div>
+</section>
+
+<section class="row g-3">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="fw-bold mb-1">Classic Favorites</div>
+                <div class="text-muted small">
+                    Plain, pepperoni, veggie — the staples done right.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="fw-bold mb-1">Fast Pickup</div>
+                <div class="text-muted small">
+                    Easy ordering and quick pickup when you’re on the move.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="fw-bold mb-1">Local & Friendly</div>
+                <div class="text-muted small">
+                    A neighborhood spot that treats you like a regular.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
