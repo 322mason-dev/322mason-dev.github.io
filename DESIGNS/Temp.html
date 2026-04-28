@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Design | Mason Brady</title>
+
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <script defer src="../JS/script.js"></script>
+</head>
+
+<body class="design-mode">
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <div class="brand">
+            <img src="../IMAGES/branding/bear-design.png" alt="Design Bear Logo" class="logo">
+            <div class="brand-text">
+                <h1>Mason Brady</h1>
+                <p>Design Portfolio</p>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="../HTML/index.html">Home</a></li>
+                <li><a href="../HTML/development.html">Development</a></li>
+                <li><a href="../HTML/design.html">Design</a></li>
+                <li><a href="../HTML/about.html">About</a></li>
+                <li><a href="../HTML/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- PROJECT HERO -->
+    <section class="project-hero">
+        <h2>Project Title</h2>
+        <p>
+            This is the project description. 1-2 sentences max.
+        </p>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-grid">
+
+        <div class="gallery-item">
+            <img src="../IMAGES/DESIGN-ASSETS/woodstock/design1.jpg"
+                 alt="Woodstock design 1"
+                 onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img src="../IMAGES/DESIGN-ASSETS/woodstock/design2.jpg"
+                 alt="Woodstock design 2"
+                 onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img src="../IMAGES/DESIGN-ASSETS/woodstock/design3.jpg"
+                 alt="Woodstock design 3"
+                 onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img src="../IMAGES/DESIGN-ASSETS/woodstock/design4.jpg"
+                 alt="Woodstock design 4"
+                 onclick="openModal(this)">
+        </div>
+
+        <!-- Duplicate more gallery-item blocks as needed -->
+
+    </section>
+
+    <!-- MODAL -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <img id="modalImage" class="modal-content" alt="Expanded project image">
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Mason Brady</p>
+    </footer>
+
+</body>
+</html>

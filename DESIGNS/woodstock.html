@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woodstock ’26 | Mason Brady</title>
+
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/design.css">
+    <script defer src="../JS/script.js"></script>
+</head>
+
+<body class="design-mode">
+
+<header class="site-header">
+    <div class="brand">
+        <img src="../IMAGES/branding/bear-design.png" alt="Design Bear Logo" class="logo">
+        <div class="brand-text">
+            <h1>Mason Brady</h1>
+            <p>Design Portfolio</p>
+        </div>
+    </div>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="../HTML/index.html">Home</a></li>
+            <li><a href="../HTML/development.html">Development</a></li>
+            <li><a href="../HTML/design.html">Design</a></li>
+            <li><a href="../HTML/about.html">About</a></li>
+            <li><a href="../HTML/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="project-hero">
+    <h2>Woodstock ’26</h2>
+    <p>
+        In collaboration with Arcadia University, I was tasked with designing the logo for Arcadia Woodstock '26. This task would have me create concepts that would later become used for fliers and tshirts which were given away to the student body.
+    </p>
+</section>
+
+<section class="project-card-grid" id="projectGrid"></section>
+
+<div id="projectModal" class="project-modal">
+    <div class="project-modal-box">
+        <button class="modal-close" onclick="closeProjectModal()">×</button>
+
+        <div class="modal-image-wrap">
+            <img id="modalImage" alt="Expanded project image">
+        </div>
+
+        <div class="modal-info">
+            <p id="modalCategory" class="modal-category"></p>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+
+            <div class="programs-box">
+                <h3>Programs Used</h3>
+                <p id="modalPrograms"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <p>© <span id="year"></span> Mason Brady</p>
+</footer>
+
+<script>
+    const imageFolder = "../IMAGES/DESIGN-ASSETS/woodstock/";
+    const possibleExtensions = [".png", ".jpg", ".jpeg", ".webp"];
+
+    const standardDescription = "A design exploration created for Arcadia University’s Woodstock ’26 event branding. This piece was part of a larger visual development process exploring typography, layout, event identity, and apparel-ready design.";
+    const shirtDescription = "A T-shirt mockup created for Arcadia University’s Woodstock ’26 event branding, showing how the design could appear on apparel.";
+
+    const projects = [
+        {
+            title: "Woodstock Concept 1.1",
+            category: "Event Branding",
+            file: "WoodStock1B",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock Concept 1.2",
+            category: "Event Branding",
+            file: "WoodStock2B",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock Concept 1.3",
+            category: "Event Branding",
+            file: "WoodStock3B",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock Concept 1.4",
+            category: "Event Branding",
+            file: "WoodStock4B",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock Concept 1.5",
+            category: "Event Branding",
+            file: "WoodStock5B",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock Concept 1.6",
+            category: "Event Branding",
+            file: "WoodStock6B",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock Concept 1.7",
+            category: "Event Branding",
+            file: "WoodStock7B",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock Shirt Mockup 1.1",
+            category: "T-Shirt Mockup",
+            file: "WoodStockShirt1",
+            description: shirtDescription,
+            programs: "Adobe Photoshop"
+        },
+        {
+            title: "Woodstock Shirt Mockup 1.2",
+            category: "T-Shirt Mockup",
+            file: "WoodStockShirt2",
+            description: shirtDescription,
+            programs: "Adobe Photoshop"
+        },
+        {
+            title: "Woodstock Shirt Mockup 1.3",
+            category: "T-Shirt Mockup",
+            file: "WoodStockShirt3",
+            description: shirtDescription,
+            programs: "Adobe Photoshop"
+        },
+        {
+            title: "Woodstock Shirt Mockup 1.4",
+            category: "T-Shirt Mockup",
+            file: "WoodStockShirt4",
+            description: shirtDescription,
+            programs: "Adobe Photoshop"
+        },
+        {
+            title: "Woodstock Shirt Mockup 1.5",
+            category: "T-Shirt Mockup",
+            file: "WoodStockShirt5",
+            description: shirtDescription,
+            programs: "Adobe Photoshop"
+        },
+        {
+            title: "Woodstock Shirt Mockup 1.6",
+            category: "T-Shirt Mockup",
+            file: "WoodStockShirt6",
+            description: shirtDescription,
+            programs: "Adobe Photoshop"
+        },
+        {
+            title: "Woodstock Shirt Mockup 1.7",
+            category: "T-Shirt Mockup",
+            file: "WoodStockShirt7",
+            description: shirtDescription,
+            programs: "Adobe Photoshop"
+        },
+        {
+            title: "Woodstock 2.0",
+            category: "Event Branding",
+            file: "Woodstock 2.0A (1)",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 2.0 Alt",
+            category: "Event Branding",
+            file: "Woodstock 2.0B (1)",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 3.1",
+            category: "Event Branding",
+            file: "Woodstock 3.0B_Artboard 2",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 3.2",
+            category: "Event Branding",
+            file: "Woodstock 3.0B_Artboard 3",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 3.3",
+            category: "Event Branding",
+            file: "Woodstock 3.0B_Artboard 4",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 3.4",
+            category: "Event Branding",
+            file: "Woodstock 3.0B_Artboard 6",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 3.5",
+            category: "Event Branding",
+            file: "Woodstock 3.0B_Artboard 7",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 3.6",
+            category: "Event Branding",
+            file: "Woodstock 3.0B_Artboard 8",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 3.7",
+            category: "Event Branding",
+            file: "Woodstock 3.0B_Artboard 9",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 3.8",
+            category: "Event Branding",
+            file: "Woodstock 3.0B_Artboard 10",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 3.9",
+            category: "Event Branding",
+            file: "Woodstock 3.0B_Artboard 11",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 3.10",
+            category: "Event Branding",
+            file: "Woodstock 3.0B_Artboard 12",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 3.11",
+            category: "Event Branding",
+            file: "Woodstock 3.0B-01",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock Doodles",
+            category: "Event Branding",
+            file: "Woodstock 3.0B_Artboard 13",
+            description: "A collection of doodles used in proposed Woodstock '26 branding",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 4.1",
+            category: "Event Branding",
+            file: "Woodstock 4.0B-01",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 4.2",
+            category: "Event Branding",
+            file: "Woodstock 4.0B-02",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 4.3",
+            category: "Event Branding",
+            file: "Woodstock 4.0B-03",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 4.4",
+            category: "Event Branding",
+            file: "Woodstock 4.0B-04",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 4.5",
+            category: "Event Branding",
+            file: "Woodstock 4.0B-05",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 4.6",
+            category: "Event Branding",
+            file: "Woodstock 4.0B-06",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 4.7",
+            category: "Event Branding",
+            file: "Woodstock 4.0B-07",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 4.8",
+            category: "Event Branding",
+            file: "Woodstock 4.0B-08",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 4.9",
+            category: "Event Branding",
+            file: "Woodstock 4.0B-09",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 4.10",
+            category: "Event Branding",
+            file: "Woodstock 4.0B-10",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 4.11",
+            category: "Event Branding",
+            file: "Woodstock 4.0B-11",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Woodstock 4.12",
+            category: "Event Branding",
+            file: "Woodstock 4.0B-12",
+            description: standardDescription,
+            programs: "Adobe Illustrator"
+        }
+    ];
+
+    function loadImageWithFallback(imgElement, baseFileName) {
+        let index = 0;
+
+        function tryNextExtension() {
+            if (index >= possibleExtensions.length) {
+                console.warn("Could not load image:", baseFileName);
+                imgElement.alt = baseFileName + " not found";
+                return;
+            }
+
+            const testSrc = imageFolder + baseFileName + possibleExtensions[index];
+            const testImage = new Image();
+
+            testImage.onload = function () {
+                imgElement.src = testSrc;
+            };
+
+            testImage.onerror = function () {
+                index++;
+                tryNextExtension();
+            };
+
+            testImage.src = testSrc;
+        }
+
+        tryNextExtension();
+    }
+
+    function createProjectCards() {
+        const grid = document.getElementById("projectGrid");
+
+        projects.forEach(function(project, index) {
+            const card = document.createElement("div");
+            card.className = "project-card";
+            card.onclick = function() {
+                openProjectModal(index);
+            };
+
+            card.innerHTML = `
+                <div class="project-card-image">
+                    <img class="portfolio-image" alt="${project.title}">
+                </div>
+
+                <div class="project-card-text">
+                    <p class="project-category">${project.category}</p>
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
+                    <span>${project.programs}</span>
+                </div>
+            `;
+
+            grid.appendChild(card);
+
+            const img = card.querySelector(".portfolio-image");
+            loadImageWithFallback(img, project.file);
+        });
+    }
+
+    function openProjectModal(index) {
+        const project = projects[index];
+
+        document.getElementById("modalTitle").textContent = project.title;
+        document.getElementById("modalCategory").textContent = project.category;
+        document.getElementById("modalDescription").textContent = project.description;
+        document.getElementById("modalPrograms").textContent = project.programs;
+
+        const modalImage = document.getElementById("modalImage");
+        modalImage.alt = project.title;
+        loadImageWithFallback(modalImage, project.file);
+
+        document.getElementById("projectModal").classList.add("active");
+        document.body.classList.add("modal-open");
+    }
+
+    function closeProjectModal() {
+        document.getElementById("projectModal").classList.remove("active");
+        document.body.classList.remove("modal-open");
+    }
+
+    document.getElementById("projectModal").addEventListener("click", function(event) {
+        if (event.target === this) {
+            closeProjectModal();
+        }
+    });
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeProjectModal();
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", createProjectCards);
+</script>
+
+</body>
+</html>

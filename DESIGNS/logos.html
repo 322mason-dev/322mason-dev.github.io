@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Archive | Mason Brady</title>
+
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/design.css">
+    <script defer src="../JS/script.js"></script>
+</head>
+
+<body class="design-mode">
+
+<header class="site-header">
+    <div class="brand">
+        <img src="../IMAGES/branding/bear-design.png" alt="Design Bear Logo" class="logo">
+        <div class="brand-text">
+            <h1>Mason Brady</h1>
+            <p>Design Portfolio</p>
+        </div>
+    </div>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="../HTML/index.html">Home</a></li>
+            <li><a href="../HTML/development.html">Development</a></li>
+            <li><a href="../HTML/design.html">Design</a></li>
+            <li><a href="../HTML/about.html">About</a></li>
+            <li><a href="../HTML/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="project-hero">
+    <h2>Design Archive</h2>
+    <p>
+        A collection of logo, branding, and packaging projects completed while attending Arcadia University.
+    </p>
+</section>
+
+<section class="project-card-grid" id="projectGrid"></section>
+
+<div id="projectModal" class="project-modal">
+    <div class="project-modal-box">
+        <button class="modal-close" onclick="closeProjectModal()">×</button>
+
+        <div class="modal-image-wrap">
+            <img id="modalImage" alt="Expanded project image">
+        </div>
+
+        <div class="modal-info">
+            <p id="modalCategory" class="modal-category"></p>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+
+            <div class="programs-box">
+                <h3>Programs Used</h3>
+                <p id="modalPrograms"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <p>© <span id="year"></span> Mason Brady</p>
+</footer>
+
+<script>
+    const imageFolder = "../IMAGES/logos/";
+    const possibleExtensions = [".png", ".jpg", ".jpeg", ".webp"];
+
+    const projects = [
+        {
+            title: "Mrs. Match Deluxe Matches",
+            category: "Logo / Character Branding",
+            file: "Brady_Mrs.Match",
+            description: "A character-based design concept centered around a matchbox project.",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Mrs. Match Mockup",
+            category: "Packaging / Mockup Design",
+            file: "Brady_Mason_MatchboxMockup2",
+            description: "A packaging mockup for Mrs. Match Deluxe Matches.",
+            programs: "Adobe Illustrator, Adobe Photoshop"
+        },
+        {
+            title: "WhatNot Photography",
+            category: "Logo Design",
+            file: "Logo Reg 2",
+            description: "A primary logo design created for WhatNot, a fictitious photography company.",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "WhatNot Photography Alt",
+            category: "Logo Variation",
+            file: "Logo White 2",
+            description: "A white variation of the WhatNot logo designed for darker backgrounds and alternate applications.",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "WhatNot Photography Mockup",
+            category: "Logo Mockup",
+            file: "Logo In Picture Reg 2",
+            description: "A logo mockup showing the WhatNot identity applied within a photograph.",
+            programs: "Adobe Illustrator, Adobe Photoshop"
+        },
+        {
+            title: "WhatNot Photography Alt Mockup",
+            category: "Logo Mockup",
+            file: "Logo In Picture White 2",
+            description: "A alternate mockup the WhatNot variation shown in context to test contrast, visibility, and flexibility.",
+            programs: "Adobe Illustrator, Adobe Photoshop"
+        },
+        {
+            title: "La Saleté Logo",
+            category: "Logo Design",
+            file: "Brady_A1_Prompt_3_RGB",
+            description: "A logo design exploration focused on creating a clean, flexible brandmark.",
+            programs: "Adobe Illustrator"
+        },
+                        {
+            title: "La Saleté Mockup",
+            category: "Packaging / Mockup Design",
+            file: "LaSateteMockup",
+            description: "A realistic mockup showing how the La Saleté branding could appear on a product.",
+            programs: "Adobe Illustrator, Adobe Photoshop"
+        },
+        {
+            title: "Harris and Harrison Brandmark",
+            category: "Brandmark Design",
+            file: "Brady_A1_Prompt_4_brandmark_RGB (1)",
+            description: "A brandmark-focused design study exploring how a simplified symbol can represent a larger identity system.",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Harris and Harrison Logo",
+            category: "Logo / Identity Design",
+            file: "Brady_A1_Prompt_4_RGB (1)",
+            description: "A visual identity piece developed as part of a logo prompt series, focusing on typography, form, and brand personality.",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Clyde Clothing Brandmark",
+            category: "Brandmark Design",
+            file: "Brady_A1_Prompt_5_brandmark_RGB (1)",
+            description: "A compact brandmark study designed to test how far a logo can be simplified while still feeling recognizable.",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Clyde Clothing Logo",
+            category: "Logo / Identity Design",
+            file: "Brady_A1_Prompt_5_RGB (1)",
+            description: "A logo concept built around visual clarity and personality, created as part of a larger series of identity experiments.",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Clyde Clothing Little Tee",
+            category: "Apparel / Logo Design",
+            file: "A1_prompt_5_little-tee (1)",
+            description: "A playful design concept created for a wearable/apparel-focused prompt. This piece explores how a simple graphic can feel bold, memorable, and usable on clothing.",
+            programs: "Adobe Illustrator, Adobe Photoshop"
+        },
+        {
+            title: "Melodies Brandmark",
+            category: "Brandmark Design",
+            file: "Brady_A1_Prompt_6_brandmark_RGB (1)",
+            description: "A symbol-based logo exploration focused on shape, balance, and how a mark can function without supporting text.",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Melodies Logo",
+            category: "Logo Design",
+            file: "Brady_A1_Prompt_6_RGB (1)",
+            description: "A music-inspired logo concept designed to feel expressive, approachable, and brandable.",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Cereal Box Design",
+            category: "Packaging Design",
+            file: "A1_prompt_6_cereal-box-B (1)",
+            description: "A packaging design project focused on making a product feel visually distinct while still working within the familiar structure of a cereal box.",
+            programs: "Adobe Illustrator, Adobe Photoshop"
+        },
+        {
+            title: "Opal Brandmark",
+            category: "Brandmark Design",
+            file: "Brady_A1_Prompt_7_brandmark_RGB (1)",
+            description: "A refined brandmark concept focused on elegance, simplicity, and visual flexibility.",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Opal Logo",
+            category: "Logo Design",
+            file: "Brady_A1_Prompt_7_RGB (1)",
+            description: "A complete logo concept for Opal, pairing a clean wordmark with a visual identity direction.",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Buzz.img Brandmark",
+            category: "Brandmark Design",
+            file: "Brady_A1_Prompt_8_brandmark_RGB",
+            description: "A brandmark exploration focused on making a simple graphic feel distinct and usable across multiple formats.",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Buzz.img Logo",
+            category: "Logo Design",
+            file: "Brady_A1_Prompt_8_RGB",
+            description: "A logo concept designed with a nostalgic feel in mind, emphasizing personality and instant recognition.",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Buzz.img Mockup",
+            category: "Mockup Design",
+            file: "Brady_A1_Prompt_8_Mockup",
+            description: "A mockup presentation showing how the Buzz.img identity could appear in a more realistic branded context.",
+            programs: "Adobe Illustrator, Adobe Photoshop"
+        },
+        {
+            title: "Westward Coastal Supply Brandmark",
+            category: "Logo Design",
+            file: "Brady_A1_Prompt_9_Brandmark_RGB",
+            description: "A refined brandmark concept leaning heavily into Typography",
+            programs: "Adobe Illustrator"
+        },
+        {
+            title: "Westward Coastal Supply Logo",
+            category: "Mockup Design",
+            file: "Brady_A1_Prompt_9_RGB",
+            description: "A logo concept designed to feel expressive while also making the brands identity clear.",
+            programs: "Adobe Illustrator, Adobe Photoshop"
+        }
+    ];
+
+    function loadImageWithFallback(imgElement, baseFileName) {
+        let index = 0;
+
+        function tryNextExtension() {
+            if (index >= possibleExtensions.length) {
+                console.warn("Could not load image:", baseFileName);
+                imgElement.alt = baseFileName + " not found";
+                return;
+            }
+
+            const testSrc = imageFolder + baseFileName + possibleExtensions[index];
+            const testImage = new Image();
+
+            testImage.onload = function () {
+                imgElement.src = testSrc;
+            };
+
+            testImage.onerror = function () {
+                index++;
+                tryNextExtension();
+            };
+
+            testImage.src = testSrc;
+        }
+
+        tryNextExtension();
+    }
+
+    function createProjectCards() {
+        const grid = document.getElementById("projectGrid");
+
+        projects.forEach(function(project, index) {
+            const card = document.createElement("div");
+            card.className = "project-card";
+            card.onclick = function() {
+                openProjectModal(index);
+            };
+
+            card.innerHTML = `
+                <div class="project-card-image">
+                    <img class="portfolio-image" alt="${project.title}">
+                </div>
+
+                <div class="project-card-text">
+                    <p class="project-category">${project.category}</p>
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
+                    <span>${project.programs}</span>
+                </div>
+            `;
+
+            grid.appendChild(card);
+
+            const img = card.querySelector(".portfolio-image");
+            loadImageWithFallback(img, project.file);
+        });
+    }
+
+    function openProjectModal(index) {
+        const project = projects[index];
+
+        document.getElementById("modalTitle").textContent = project.title;
+        document.getElementById("modalCategory").textContent = project.category;
+        document.getElementById("modalDescription").textContent = project.description;
+        document.getElementById("modalPrograms").textContent = project.programs;
+
+        const modalImage = document.getElementById("modalImage");
+        modalImage.alt = project.title;
+        loadImageWithFallback(modalImage, project.file);
+
+        document.getElementById("projectModal").classList.add("active");
+        document.body.classList.add("modal-open");
+    }
+
+    function closeProjectModal() {
+        document.getElementById("projectModal").classList.remove("active");
+        document.body.classList.remove("modal-open");
+    }
+
+    document.getElementById("projectModal").addEventListener("click", function(event) {
+        if (event.target === this) {
+            closeProjectModal();
+        }
+    });
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeProjectModal();
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", createProjectCards);
+</script>
+
+</body>
+</html>
