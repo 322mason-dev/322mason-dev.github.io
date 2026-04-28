@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+
+    <category id="platters" name="Captain's Platters" type="food">
+        <item>
+            <name>Captain's Catch Platter</name>
+            <description>Crab legs, shrimp, fried fish, hush puppies, and seasoned fries.</description>
+            <price>29.99</price>
+        </item>
+        <item>
+            <name>Boardwalk Feast</name>
+            <description>Fried shrimp, clam strips, scallops, and onion rings served for sharing.</description>
+            <price>26.99</price>
+        </item>
+        <item>
+            <name>Admiral's Combo</name>
+            <description>Grilled salmon, crab cake, buttered corn, and roasted potatoes.</description>
+            <price>31.99</price>
+        </item>
+        <item>
+            <name>Pirate's Plunder</name>
+            <description>Lobster tail, fried shrimp, and golden fries with drawn butter.</description>
+            <price>34.99</price>
+        </item>
+        <item>
+            <name>Treasure Chest Feast</name>
+            <description>A massive mix of shrimp, crab legs, scallops, and fish for the whole crew.</description>
+            <price>39.99</price>
+        </item>
+        <item>
+            <name>Dockside Duo</name>
+            <description>Crab cake and grilled shrimp served with fries and slaw.</description>
+            <price>24.99</price>
+        </item>
+    </category>
+
+    <category id="fried" name="Fried Favorites" type="food">
+        <item>
+            <name>Fried Shrimp Basket</name>
+            <description>Crispy fried shrimp served with fries and cocktail sauce.</description>
+            <price>15.99</price>
+        </item>
+        <item>
+            <name>Clam Strip Basket</name>
+            <description>Boardwalk-style fried clam strips with fries.</description>
+            <price>14.99</price>
+        </item>
+        <item>
+            <name>Fish and Chips</name>
+            <description>Beer-battered white fish with seasoned fries and tartar sauce.</description>
+            <price>16.99</price>
+        </item>
+        <item>
+            <name>Fried Oyster Basket</name>
+            <description>Golden fried oysters served with slaw and fries.</description>
+            <price>17.99</price>
+        </item>
+        <item>
+            <name>Calamari Rings</name>
+            <description>Crispy calamari served with marinara and lemon.</description>
+            <price>13.99</price>
+        </item>
+        <item>
+            <name>Fried Crab Bites</name>
+            <description>Breaded crab bites served with house dipping sauce.</description>
+            <price>14.49</price>
+        </item>
+    </category>
+
+    <category id="galley" name="From the Galley" type="food">
+        <item>
+            <name>Crab Cake Sandwich</name>
+            <description>House crab cake on a toasted roll with lettuce and remoulade.</description>
+            <price>16.49</price>
+        </item>
+        <item>
+            <name>Lobster Roll</name>
+            <description>Chilled lobster tossed lightly in dressing on a buttery roll.</description>
+            <price>19.99</price>
+        </item>
+        <item>
+            <name>Seafarer's Burger</name>
+            <description>Char-grilled burger with cheddar, pickles, and boardwalk sauce.</description>
+            <price>13.99</price>
+        </item>
+        <item>
+            <name>Captain's Tacos</name>
+            <description>Three fish tacos topped with slaw and lime crema.</description>
+            <price>14.99</price>
+        </item>
+        <item>
+            <name>Grilled Salmon Plate</name>
+            <description>Fresh salmon with roasted vegetables and lemon butter.</description>
+            <price>18.99</price>
+        </item>
+        <item>
+            <name>Shrimp Alfredo</name>
+            <description>Creamy pasta with sautéed shrimp and parmesan.</description>
+            <price>17.99</price>
+        </item>
+        <item>
+            <name>Blackened Mahi Sandwich</name>
+            <description>Blackened mahi on a toasted brioche bun with slaw and citrus aioli.</description>
+            <price>17.49</price>
+        </item>
+        <item>
+            <name>Dockworker Po' Boy</name>
+            <description>Crispy shrimp piled high with lettuce, tomato, and remoulade.</description>
+            <price>15.99</price>
+        </item>
+    </category>
+
+    <category id="drinks" name="Dockside Drinks" type="food">
+        <item>
+            <name>Mermaid Lemonade</name>
+            <description>Bright blue lemonade with citrus and tropical flavor.</description>
+            <price>4.99</price>
+        </item>
+        <item>
+            <name>Pirate Punch</name>
+            <description>Fruit punch blend served over ice.</description>
+            <price>4.49</price>
+        </item>
+        <item>
+            <name>Ocean Breeze Soda</name>
+            <description>Refreshing house soda with lime and berry notes.</description>
+            <price>3.99</price>
+        </item>
+        <item>
+            <name>Fresh Brewed Iced Tea</name>
+            <description>Sweet or unsweetened iced tea.</description>
+            <price>3.49</price>
+        </item>
+        <item>
+            <name>Cold Brew Coffee</name>
+            <description>Smooth cold brew served over ice.</description>
+            <price>3.99</price>
+        </item>
+        <item>
+            <name>Saltwater Cola</name>
+            <description>Classic cola with a pirate twist.</description>
+            <price>3.49</price>
+        </item>
+    </category>
+
+    <category id="kids" name="Little Mates Menu" type="food">
+        <item>
+            <name>Mini Fish Bites</name>
+            <description>Kid-sized fried fish bites with fries.</description>
+            <price>8.99</price>
+        </item>
+        <item>
+            <name>Captain's Chicken Tenders</name>
+            <description>Crispy chicken tenders with fries.</description>
+            <price>8.49</price>
+        </item>
+        <item>
+            <name>Mac and Cheese Treasure Bowl</name>
+            <description>Creamy macaroni and cheese.</description>
+            <price>7.99</price>
+        </item>
+        <item>
+            <name>Grilled Cheese Raft</name>
+            <description>Classic grilled cheese with fries.</description>
+            <price>7.49</price>
+        </item>
+        <item>
+            <name>Mini Shrimp Basket</name>
+            <description>Small fried shrimp portion for kids.</description>
+            <price>8.99</price>
+        </item>
+        <item>
+            <name>Pirate Pizza Slice</name>
+            <description>Cheesy slice served with fries.</description>
+            <price>7.99</price>
+        </item>
+    </category>
+
+    <category id="cocktails" name="Captain's Cocktails" type="alcohol">
+        <item>
+            <name>Rum Runner</name>
+            <description>Dark rum, banana liqueur, blackberry, and citrus over ice.</description>
+            <price>11.99</price>
+        </item>
+        <item>
+            <name>Mermaid Mule</name>
+            <description>Vodka, ginger beer, lime, and blue curaçao for a bright ocean kick.</description>
+            <price>10.99</price>
+        </item>
+        <item>
+            <name>Pirate's Punch</name>
+            <description>Rum blend, tropical juices, and grenadine served tall.</description>
+            <price>12.49</price>
+        </item>
+        <item>
+            <name>Black Flag Mojito</name>
+            <description>White rum, mint, lime, and sparkling soda.</description>
+            <price>10.99</price>
+        </item>
+        <item>
+            <name>Captain's Colada</name>
+            <description>Coconut, pineapple, and rum blended frozen.</description>
+            <price>11.49</price>
+        </item>
+        <item>
+            <name>Stormy Seas</name>
+            <description>Dark rum and ginger beer with lime and bitters.</description>
+            <price>10.99</price>
+        </item>
+        <item>
+            <name>Kraken’s Grip</name>
+            <description>Dark rum, blackberry liqueur, lime juice, and a splash of cola. Deep, bold, and slightly dangerous.</description>
+            <price>12.99</price>
+        </item>
+        
+        <item>
+            <name>Tidal Wave</name>
+            <description>Vodka, blue curaçao, pineapple juice, and coconut cream — bright, tropical, and hits harder than it looks.</description>
+            <price>11.99</price>
+        </item>
+    </category>
+
+    <category id="frozen" name="Frozen Favorites" type="alcohol">
+        <item>
+            <name>Frozen Mango Daiquiri</name>
+            <description>Rum, mango, and lime blended ice cold.</description>
+            <price>11.49</price>
+        </item>
+        <item>
+            <name>Strawberry Cannonball</name>
+            <description>Frozen strawberry cocktail with a sweet pirate kick.</description>
+            <price>10.99</price>
+        </item>
+        <item>
+            <name>Boardwalk Piña Colada</name>
+            <description>Coconut cream, pineapple, and rum blended smooth.</description>
+            <price>11.99</price>
+        </item>
+        <item>
+            <name>Blue Lagoon Freeze</name>
+            <description>Blue curaçao, citrus, and rum in a frozen summer blend.</description>
+            <price>11.49</price>
+        </item>
+    </category>
+
+    <category id="beer" name="Beer &amp; Cans" type="alcohol">
+        <item>
+            <name>Domestic Draft</name>
+            <description>Ask your server for today’s rotating domestic draft.</description>
+            <price>5.99</price>
+        </item>
+        <item>
+            <name>Imported Draft</name>
+            <description>Cold imported draft served by the pint.</description>
+            <price>6.99</price>
+        </item>
+        <item>
+            <name>Boardwalk Lager</name>
+            <description>Light, crisp lager perfect for seafood and sunshine.</description>
+            <price>6.49</price>
+        </item>
+        <item>
+            <name>Pirate IPA</name>
+            <description>Bold hop-forward IPA with citrus notes.</description>
+            <price>6.99</price>
+        </item>
+        <item>
+            <name>Hard Seltzer</name>
+            <description>Rotating fruity canned seltzer flavors.</description>
+            <price>6.49</price>
+        </item>
+    </category>
+
+    <category id="shots" name="Shots &amp; Sips" type="alcohol">
+        <item>
+            <name>Gold Coin Shot</name>
+            <description>Butterscotch schnapps and cream.</description>
+            <price>6.99</price>
+        </item>
+        <item>
+            <name>Walk the Plank</name>
+            <description>Spiced rum and cinnamon liqueur.</description>
+            <price>7.49</price>
+        </item>
+        <item>
+            <name>Sea Witch</name>
+            <description>Green apple schnapps with a tart finish.</description>
+            <price>6.99</price>
+        </item>
+        <item>
+            <name>Cannon Fire</name>
+            <description>Spiced whiskey shot with a fiery finish.</description>
+            <price>7.99</price>
+        </item>
+    </category>
+
+</menu>

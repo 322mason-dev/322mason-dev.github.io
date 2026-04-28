@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+:root{
+    --scally-bg: rgba(198, 161, 91, 0.10);
+    --scally-surface: #fffaf2;
+    --scally-surface-alt: #fffdf8;
+    --scally-text: #1f2430;
+
+    --scally-navy: #1f3a5f;
+    --scally-navy-dark: #162b47;
+
+    --scally-red: #9e3b2f;
+    --scally-red-dark: #7f2e25;
+
+    --scally-gold: #c6a15b;
+    --scally-gold-dark: #a88443;
+
+    --scally-muted: #6f6a63;
+    --scally-border: #ddd2bf;
+
+    --scally-shadow: 0 10px 30px rgba(31, 36, 48, 0.12);
+    --scally-soft-shadow: 0 2px 10px rgba(31, 36, 48, 0.06);
+    --scally-radius: 18px;
+}
+
+html,
+body{
+    background: var(--scally-bg);
+    color: var(--scally-text);
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    line-height: 1.5;
+    background: var(--scally-bg);
+}
+
+/* =========================
+   Global Elements
+   ========================= */
+
+a{
+    color: var(--scally-navy);
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+section{
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+}
+
+section h1,
+section h2,
+section h3,
+header nav a{
+    font-family: "Pirata One", Georgia, serif;
+    letter-spacing: 0.5px;
+}
+
+section h2{
+    font-size: 2rem;
+    color: var(--scally-navy-dark);
+    margin-bottom: 0.75rem;
+}
+
+section h3{
+    font-size: 1.3rem;
+    color: var(--scally-red);
+    margin-bottom: 0.75rem;
+}
+
+.lead{
+    color: var(--scally-muted);
+}
+
+.btn{
+    border-radius: 999px;
+    font-weight: 700;
+    padding: 0.7rem 1.4rem;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.15rem;
+}
+
+.btn-primary{
+    background-color: var(--scally-red);
+    border-color: var(--scally-red);
+}
+
+.btn-primary:hover{
+    background-color: var(--scally-red-dark);
+    border-color: var(--scally-red-dark);
+}
+
+.btn-outline-light{
+    border-width: 2px;
+}
+
+.form-control,
+.form-select{
+    border-radius: 12px;
+    border: 1px solid var(--scally-border);
+    background: var(--scally-surface-alt);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.1rem;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color: var(--scally-gold);
+    box-shadow: 0 0 0 0.2rem rgba(198, 161, 91, 0.22);
+}
+
+.shared-card{
+    background: var(--scally-surface);
+    border: 1px solid var(--scally-border);
+    border-radius: var(--scally-radius);
+    box-shadow: var(--scally-soft-shadow);
+}
+
+/* =========================
+   Header
+   ========================= */
+
+header{
+    background: rgba(31, 58, 95, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 3px solid var(--scally-gold);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+header nav{
+    position: relative;
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+}
+
+header .nav-inner{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    min-height: 120px;
+}
+
+.header-logo{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-logo img{
+    max-height: 130px;
+    width: auto;
+}
+
+header nav a{
+    color: #f8f3ea;
+    font-size: 2rem;
+    font-weight: 400;
+    padding: 8px 14px;
+    border-radius: 999px;
+    transition: all 0.2s ease;
+}
+
+header nav a:hover{
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* =========================
+   Home Page
+   ========================= */
+
+#home{
+    background:
+        linear-gradient(rgba(20, 28, 42, 0.65), rgba(20, 28, 42, 0.65)),
+        url("../images/pirate-ships.jpg") center/cover no-repeat;
+
+    color: #fff8ef;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+}
+
+#home h1{
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 700;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+#home .lead{
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255, 248, 239, 0.92);
+    font-size: 1.4rem;
+}
+
+#home img{
+    box-shadow: var(--scally-shadow);
+    border: 4px solid rgba(255, 250, 242);
+}
+
+/* Home Highlights */
+#highlights .p-4{
+    background: var(--scally-surface);
+    border: 1px solid var(--scally-border);
+    border-radius: var(--scally-radius);
+    box-shadow: var(--scally-soft-shadow);
+}
+
+/* Home Special Events */
+#special-events{
+    background: rgba(198, 161, 91, 0.10);
+}
+
+#special-events h2{
+    color: var(--scally-navy-dark);
+}
+
+#special-events .lead{
+    color: var(--scally-muted);
+}
+
+#special-events .p-4{
+    background: var(--scally-surface);
+    border: 1px solid var(--scally-border);
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(31, 36, 48, 0.08);
+    padding: 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#special-events .p-4:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(31, 36, 48, 0.12);
+}
+
+#special-events h3{
+    color: var(--scally-red);
+    margin-bottom: 0.75rem;
+}
+
+/* =========================
+   Section Watermark Pattern
+   ========================= */
+
+#about-main,
+#menu-main,
+#reservations-main{
+    position: relative;
+    background-color: var(--scally-bg);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+#about-main::before,
+#menu-main::before,
+#reservations-main::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/scallywags-logo.png");
+    background-repeat: repeat;
+    background-size: 300px;
+    background-position: center;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#about-main > .container,
+#menu-main > .container,
+#reservations-main > .container{
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================
+   About Page
+   ========================= */
+
+#about-hero{
+    background: linear-gradient(rgba(22, 43, 71, 0.88), rgba(22, 43, 71, 0.88));
+    color: #fff8ef;
+}
+
+#about-hero h1{
+    font-size: clamp(2.8rem, 5vw, 4.6rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+#about-hero .lead{
+    color: rgba(255, 248, 239, 0.88);
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 1.35rem;
+}
+
+#about-main .p-4{
+    background: var(--scally-surface);
+    border: 1px solid var(--scally-border);
+    border-radius: var(--scally-radius);
+    box-shadow: var(--scally-soft-shadow);
+}
+
+#about-main img{
+    box-shadow: var(--scally-shadow);
+    border: 4px solid rgba(255, 250, 242, 0.7);
+}
+
+/* =========================
+   Menu Page
+   ========================= */
+
+#menu-hero{
+    background: linear-gradient(rgba(22, 43, 71, 0.88), rgba(22, 43, 71, 0.88));
+    color: #fff8ef;
+}
+
+#menu-hero h1{
+    font-size: clamp(2.8rem, 5vw, 4.6rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+#menu-hero .lead{
+    color: rgba(255, 248, 239, 0.88);
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.35rem;
+}
+
+.menu-category{
+    background: var(--scally-surface);
+    border: 1px solid var(--scally-border);
+    border-radius: var(--scally-radius);
+    box-shadow: var(--scally-shadow);
+}
+
+.menu-category h2{
+    font-size: 2.2rem;
+    color: var(--scally-navy-dark);
+    border-bottom: 2px solid var(--scally-gold);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu-item{
+    background: var(--scally-surface-alt);
+    border: 1px solid var(--scally-border);
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(31, 36, 48, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-item:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(31, 36, 48, 0.10);
+}
+
+.menu-item h3{
+    font-size: 1.35rem;
+    color: var(--scally-red);
+    font-weight: 700;
+}
+
+.menu-item p{
+    color: var(--scally-muted);
+    line-height: 1.5;
+}
+
+.menu-price{
+    color: var(--scally-navy-dark);
+    font-weight: 700;
+    font-size: 1rem;
+    background: rgba(198, 161, 91, 0.16);
+    padding: 6px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+#menu-container > .col-12{
+    margin-bottom: 0.5rem;
+}
+
+.menu-divider{
+    padding: 2.5rem 1.5rem;
+    background: linear-gradient(rgba(31, 58, 95, 0.92), rgba(22, 43, 71, 0.92));
+    border: 2px solid var(--scally-gold);
+    border-radius: var(--scally-radius);
+    box-shadow: 0 10px 26px rgba(31, 36, 48, 0.18);
+}
+
+.menu-divider h2{
+    color: #fff8ef;
+    font-size: 2.4rem;
+}
+
+.menu-divider .lead{
+    color: rgba(255, 248, 239, 0.88);
+}
+
+.menu-pirate-img{
+    max-width: 100%;
+    height: auto;
+    opacity: 0.95;
+}
+
+@media (max-width: 768px){
+    .menu-pirate-img{
+        margin-top: 1rem;
+        max-width: 60%;
+    }
+}
+
+/* =========================
+   Reservations Page
+   ========================= */
+
+#reservations-hero{
+    background: linear-gradient(rgba(22, 43, 71, 0.88), rgba(22, 43, 71, 0.88));
+    color: #fff8ef;
+}
+
+#reservations-hero h1{
+    font-size: clamp(2.8rem, 5vw, 4.6rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+#reservations-hero .lead{
+    color: rgba(255, 248, 239, 0.88);
+    font-size: 1.35rem;
+}
+
+.reservation-form-wrapper{
+    background: var(--scally-surface);
+    border: 1px solid var(--scally-border);
+    border-radius: var(--scally-radius);
+    box-shadow: var(--scally-shadow);
+}
+
+.reservation-form-wrapper h2{
+    color: var(--scally-navy-dark);
+}
+
+.reservation-form-wrapper p{
+    color: var(--scally-muted);
+}
+
+.reservation-note{
+    font-size: 0.95rem;
+    color: var(--scally-muted);
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+footer{
+    background: var(--scally-navy-dark);
+    font-size: 1.350rem;
+    color: #f4ede1;
+    border-top: 3px solid var(--scally-gold);
+}
+
+footer a{
+    color: #f4ede1;
+}
+
+footer a:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+footer p{
+    margin-bottom: 0.5rem;
+}
+
+footer img{
+    max-width: 260px;
+    height: auto;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 992px){
+    header .nav-inner{
+        justify-content: center;
+        min-height: auto;
+        padding-top: 110px;
+    }
+
+    .header-logo{
+        top: 10px;
+    }
+
+    header nav a{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px){
+    .header-logo img{
+        max-height: 95px;
+    }
+
+    header .nav-inner{
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-top: 95px;
+    }
+
+    header nav a{
+        font-size: 1.3rem;
+        padding: 6px 10px;
+    }
+
+    footer img{
+        max-width: 180px;
+        height: auto;
+    }
+
+    #home{
+        text-align: center;
+    }
+
+    #home h1{
+        font-size: clamp(2.4rem, 8vw, 4rem);
+    }
+}
