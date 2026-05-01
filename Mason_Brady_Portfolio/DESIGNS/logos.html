@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Design | Mason Brady</title>
+
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <script defer src="../JS/script.js"></script>
+</head>
+
+<body class="design-mode">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="brand">
+            <img src="../IMAGES/branding/bear-design.png" alt="Design Bear Logo" class="logo">
+            <div class="brand-text">
+                <h1>Mason Brady</h1>
+                <p>Design Portfolio</p>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="../HTML/index.html">Home</a></li>
+                <li><a href="../HTML/development.html">Development</a></li>
+                <li><a href="../HTML/design.html">Design</a></li>
+                <li><a href="../HTML/about.html">About</a></li>
+                <li><a href="../HTML/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PROJECT HERO -->
+    <section class="project-hero">
+        <h2>Design Archive</h2>
+        <p>
+            A collection of logo, branding, packaging, mockup, and visual identity projects.
+        </p>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-grid">
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="A1_prompt_5_little-tee (1)" alt="Little Tee design" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="A1_prompt_6_cereal-box-B (1)" alt="Cereal box design" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Brady_A1_Prompt_3_RGB" alt="La Salette logo" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Brady_A1_Prompt_4_brandmark_RGB (1)" alt="Brandmark design 4" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Brady_A1_Prompt_4_RGB (1)" alt="Prompt 4 RGB design" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Brady_A1_Prompt_5_brandmark_RGB (1)" alt="Brandmark design 5" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Brady_A1_Prompt_5_RGB (1)" alt="Prompt 5 RGB design" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Brady_A1_Prompt_6_brandmark_RGB (1)" alt="Brandmark design 6" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Brady_A1_Prompt_6_RGB (1)" alt="Melodies logo" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Brady_A1_Prompt_7_brandmark_RGB (1)" alt="Opal brandmark" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Brady_A1_Prompt_7_RGB (1)" alt="Opal logo" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Brady_A1_Prompt_8_brandmark_RGB" alt="Brandmark design 8" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Brady_A1_Prompt_8_Mockup" alt="Prompt 8 mockup" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Brady_A1_Prompt_8_RGB" alt="Buzz logo" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Brady_Mason_MatchboxMockup2" alt="Matchbox mockup" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Brady_Mrs.Match" alt="Mrs. Match design" onclick="openModal(this)">
+        </div>
+
+        <!--<div class="gallery-item">
+            <img class="portfolio-image" data-file="HHA1_prompt4_shipping-container (1)" alt="Shipping container design 1" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="HHA1_prompt4_shipping-container-2 (1)" alt="Shipping container design 2" onclick="openModal(this)">
+        </div>
+    -->
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="LaSateteMockup" alt="La Salette mockup" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Logo In Picture Reg 2" alt="Logo in picture regular" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Logo In Picture White 2" alt="Logo in picture white" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Logo Reg 2" alt="WhatNot logo regular" onclick="openModal(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img class="portfolio-image" data-file="Logo White 2" alt="WhatNot logo white" onclick="openModal(this)">
+        </div>
+
+    </section>
+
+    <!-- MODAL -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <img id="modalImage" class="modal-content" alt="Expanded project image">
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Mason Brady</p>
+    </footer>
+
+    <script>
+        // CHANGE THIS if your images are stored in a different folder
+        const imageFolder = "../IMAGES/logos/";
+
+        const possibleExtensions = [".png", ".jpg", ".jpeg", ".webp"];
+
+        function loadImageWithFallback(imgElement, baseFileName) {
+            let index = 0;
+
+            function tryNextExtension() {
+                if (index >= possibleExtensions.length) {
+                    console.warn("Could not load image:", baseFileName);
+                    imgElement.alt = baseFileName + " not found";
+                    return;
+                }
+
+                const testSrc = imageFolder + baseFileName + possibleExtensions[index];
+                const testImage = new Image();
+
+                testImage.onload = function () {
+                    imgElement.src = testSrc;
+                };
+
+                testImage.onerror = function () {
+                    index++;
+                    tryNextExtension();
+                };
+
+                testImage.src = testSrc;
+            }
+
+            tryNextExtension();
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".portfolio-image");
+
+            images.forEach(function (img) {
+                const fileName = img.dataset.file;
+                loadImageWithFallback(img, fileName);
+            });
+        });
+    </script>
+
+</body>
+</html>
